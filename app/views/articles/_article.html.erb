@@ -9,4 +9,26 @@
     <%= article.body %>
   </p>
 
+  <% article.photos.each do |photo| %>
+    <%= cl_image_tag photo.key, height: 300, width: 400 %>
+
+  <% end %>
+
+  <% if false %>
+    <% if article.photo.attached? %>
+      <div class="card-category"
+      style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path article.photo.key, height: 300, crop: :fill %>')"
+    >
+      Cool article
+    </div>
+    <% else %>
+        <div class="card-category"
+      style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png')"
+    >
+      Cool article
+    </div>
+    <% end %>
+
+  <% end %>
+
 </div>
